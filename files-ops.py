@@ -1,54 +1,68 @@
 import os
 import sys
 
+
 def create_directory(dir_name):
-    # ... 
+    os.mkdir(dir_name)
     return
+
 
 def change_directory(dir_name):
-    # ... 
+    os.chdir(dir_name)
+    # Verify the change
+    print(f'Current working directory: {os.getcwd()}')
     return
+
 
 def delete_directory(dir_name):
-    # ...
+    os.rmdir(dir_name)
     return
+
 
 def list_dir():
-    # ...
+    os.listdir()
     return
+
 
 def display_pwd():
-    # ... 
+    # Get and display the current working directory
+    current_directory = os.getcwd()
+    print(f'Current working directory: {current_directory}')
     return
 
+
 def create_file(file_name):
-    
+
     with open(file_name, 'w') as f:
         pass
     print(f"File '{file_name}' is created")
-     
+
     return
+
 
 def write_file(file_name):
-    
-    contents = input("Enter the contents into the file");
+
+    contents = input("Enter the contents into the file")
     with open(file_name, 'a') as f:
-        f.write(contents + '\n');
+        f.write(contents + '\n')
     print(f"Contents written to file successfully")
-     
+
     return
+
 
 def read_file(file_name):
-    
+
     with open(file_name, 'r') as f:
-        print(f.read());
+        print(f.read())
 
     return
+
 
 def delete_file(file_name):
-    
-    os.remove(file_name) 
+
+    os.remove(file_name)
     return
+
 
 def main():
     while True:
@@ -74,7 +88,7 @@ def main():
         elif choice == '0':
             break
         else:
-            print("Invalid choice");
+            print("Invalid choice")
 
 
 if __name__ == "__main__":
